@@ -1,0 +1,49 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+/* LINKS */
+a {
+  text-decoration: none;
+}
+
+/* NAVBAR */
+.navbar {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* MAIN CONTENT */
+.container {
+  max-width: 1100px;
+}
+
+/* HOME PAGE */
+h1 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* FOOTER */
+footer {
+  background-color: #212529;
+  color: #fff;
+}
+
+footer p {
+  margin: 0;
+}
