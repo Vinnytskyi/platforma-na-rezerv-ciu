@@ -1,61 +1,46 @@
-<!-- src/views/TrainingsView.vue -->
 <template>
   <div class="container mt-4">
-    <h1 class="mb-4 text-center">Available Trainings</h1>
+    <h1 class="text-center mb-4">Available Trainings</h1>
+
     <div class="d-flex flex-wrap justify-content-center">
-      <TrainingCard
+      <div
+        class="card m-2"
+        style="width: 18rem"
         v-for="t in trainings"
         :key="t.id"
-        :training="t"
-        @reserve="reserveTraining"
-      />
+      >
+        <img :src="t.image" class="card-img-top" />
+
+        <div class="card-body">
+          <h5>{{ t.title }}</h5>
+          <p>{{ t.description }}</p>
+
+          <small>Times: {{ t.timeSlots.join(', ') }}</small>
+
+          <button
+            class="btn btn-primary mt-2"
+            @click="reserve(t.id)"
+          >
+            Reserve
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import TrainingCard from '../components/TrainingCard.vue'
+import trainingsData from '../data/trainings'
 
 export default {
-  name: 'TrainingsView',
-  components: { TrainingCard },
   data() {
     return {
-      trainings: [
-        {
-          id: 1,
-          name: 'Yoga',
-          description: 'Relaxing and stretching exercises.',
-          time: '08:00 - 09:00',
-          image: 'https://images.pexels.com/photos/1051838/pexels-photo-1051838.jpeg'
-        },
-        {
-          id: 2,
-          name: 'Pilates',
-          description: 'Core strength and flexibility training.',
-          time: '09:30 - 10:30',
-          image: 'https://images.pexels.com/photos/3757955/pexels-photo-3757955.jpeg'
-        },
-        {
-          id: 3,
-          name: 'HIIT',
-          description: 'High intensity interval training.',
-          time: '11:00 - 11:45',
-          image: 'https://images.pexels.com/photos/6390240/pexels-photo-6390240.jpeg'
-        },
-        {
-          id: 4,
-          name: 'Boxing',
-          description: 'Intense cardio and strength workout.',
-          time: '12:00 - 12:55',
-          image: 'https://images.pexels.com/photos/7187935/pexels-photo-7187935.jpeg'
-        }
-      ]
+      trainings: trainingsData.trainings
     }
   },
   methods: {
-    reserveTraining(training) {
-      alert(`You reserved: ${training.name}`)
+    reserve(id) {
+      this.$router.push('/reservations?trainingId=' + id)
     }
   }
 }

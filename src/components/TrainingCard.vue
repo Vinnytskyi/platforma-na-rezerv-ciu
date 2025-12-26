@@ -5,7 +5,14 @@
       <h5 class="card-title">{{ training.name }}</h5>
       <p class="card-text">{{ training.description }}</p>
       <p class="card-text"><small class="text-muted">Time: {{ training.time }}</small></p>
-      <button class="btn btn-primary" @click="reserve">Reserve</button>
+      <p class="card-text"><small class="text-muted">Slots left: {{ training.slots }}</small></p>
+      <button
+        class="btn btn-primary"
+        @click="reserve"
+        :disabled="training.slots === 0"
+      >
+        Reserve
+      </button>
     </div>
   </div>
 </template>
@@ -26,9 +33,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.card {
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
-</style>

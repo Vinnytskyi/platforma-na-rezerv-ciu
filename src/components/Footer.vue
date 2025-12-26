@@ -1,12 +1,8 @@
 <template>
-  <footer class="bg-dark text-light py-4 mt-auto">
+  <footer class="footer">
     <div class="container text-center">
-      <p class="mb-1">
-        © {{ currentYear }} GymReserve
-      </p>
-      <p class="mb-0 small">
-        Online platform for gym reservations
-      </p>
+      <p class="mb-1">© {{ currentYear }} GymReserve</p>
+      <p class="mb-0 small">Online platform for gym reservations</p>
     </div>
   </footer>
 </template>
@@ -22,8 +18,4 @@ export default {
 }
 </script>
 
-<style>
-footer {
-  width: 100%;
-}
-</style>
+

@@ -8,57 +8,42 @@
 /* BODY */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f6f8;
-  color: #333;
+  background-color: #f0f4f8;
+  color: #000;
 }
 
-/* LINKS */
-a {
-  text-decoration: none;
-}
-
-/* NAVBAR */
-.navbar {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* MAIN CONTENT */
+/* CONTAINER */
 .container {
   max-width: 1100px;
   padding: 20px;
 }
 
-/* HOME PAGE */
-h1 {
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #212529;
+/* HEADINGS */
+h1, h2, h5 {
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 15px;
 }
 
-p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-/* TRAINING CARD */
+/* CARD */
 .card {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
-  margin: 15px;
+  background-color: #fff;
   border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 15px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .card img {
   width: 100%;
-  height: 180px; /* фіксована висота для однакових картинок */
+  height: 180px;
   object-fit: cover;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
 }
 
 /* CARD BODY */
@@ -67,39 +52,83 @@ p {
 }
 
 .card-title {
-  font-size: 1.25rem;
+  font-weight: bold;
   margin-bottom: 8px;
 }
 
 .card-text {
+  font-weight: bold;
   font-size: 0.95rem;
   margin-bottom: 10px;
 }
 
-/* BUTTON */
-.btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
-  transition: background-color 0.2s, transform 0.2s;
+/* BUTTONS */
+.btn {
+  border-radius: 5px;
+  transition: transform 0.2s;
 }
 
-.btn-primary:hover {
-  background-color: #228a98;
+.btn:hover {
   transform: translateY(-2px);
+}
+
+/* PRIMARY BUTTON */
+.btn-primary {
+  background-color: #0ea5e9; /* блакитний */
+  border: none;
+  color: #fff;
+}
+
+/* SUCCESS BUTTON */
+.btn-success {
+  background-color: #22c55e; /* зелений */
+  border: none;
+  color: #fff;
+}
+
+/* DANGER BUTTON */
+.btn-danger {
+  background-color: #ef4444; /* червоний */
+  border: none;
+  color: #fff;
+}
+
+/* INFO CARD (для головної сторінки) */
+.info-card {
+  max-width: 600px;
+  border: 2px solid #0ea5e9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  background-color: #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.info-card h2 {
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.info-card p {
+  margin-bottom: 10px;
+  font-size: 1rem;
 }
 
 /* FOOTER */
 footer {
-  background-color: #212529;
+  background-color: #212529; 
   color: #fff;
-  padding: 20px 0;
-  margin-top: auto;
+  padding: 2px 0;
   text-align: center;
-}
-
-footer p {
-  margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  margin-top: auto;
 }
 
 /* RESPONSIVE */
@@ -110,5 +139,9 @@ footer p {
   }
   .card {
     width: 90%;
+  }
+  .info-card {
+    width: 90%;
+    padding: 15px;
   }
 }
