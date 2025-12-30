@@ -1,105 +1,81 @@
 <template>
   <div class="container mt-4">
-    <h1 class="text-center mb-4">Reserve Your Training</h1>
+    <h1 class="text-center mb-4">Rezervácia tréningu</h1>
 
-    <div class="card p-3 mb-4">
-      <h5>Select Training:</h5>
-
-      <select v-model="selectedTraining" class="form-select mb-3">
-        <option v-for="t in trainings" :key="t.id" :value="t">
-          {{ t.title }}
-        </option>
-      </select>
-
-      <h5>Select Time Slot:</h5>
-
-      <select v-model="selectedTime" class="form-select mb-3">
-        <option v-for="slot in selectedTraining.timeSlots" :key="slot">
-          {{ slot }}
-        </option>
-      </select>
-
-      <button class="btn btn-success" @click="reserve">
-        Reserve
-      </button>
+    <!-- Formulár na vytvorenie rezervácie -->
+    <div class="card p-4 mb-4">
+      <h4 class="mb-3">Nová rezervácia</h4>
+      <ReservationForm 
+        :trainings="trainings"
+        @reserve="addNewReservation"
+      />
     </div>
 
-    <h2>My Reservations</h2>
+    <!-- Zoznam rezervácií -->
+    <div class="card p-4">
+      <h4 class="mb-3">
+        Moje rezervácie 
+        <span class="badge bg-primary">{{ reservations.length }}</span>
+      </h4>
 
-    <ul class="list-group">
-      <li
-        v-for="(r, index) in reservations"
-        :key="index"
-        class="list-group-item d-flex justify-content-between align-items-center"
-      >
-        {{ r.trainingName }} | {{ r.time }}
+      <ReservationTable 
+        v-if="reservations.length"
+        :reservations="reservations"
+        @delete="deleteReservation"
+      />
 
-        <button class="btn btn-danger btn-sm" @click="deleteReservation(index)">
-          Delete
-        </button>
-      </li>
-
-      <li
-        v-if="reservations.length === 0"
-        class="list-group-item text-center text-muted"
-      >
-        No reservations yet
-      </li>
-    </ul>
+      <div v-else class="alert alert-info text-center">
+        <h5>Zatiaľ nemáš žiadne rezervácie</h5>
+        <p>Vytvor si prvú rezerváciu vyššie!</p>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import trainingsData from '../data/trainings'
 import { useReservationStore } from '../stores/reservationStore'
+import ReservationForm from '../components/ReservationForm.vue'
+import ReservationTable from '../components/ReservationTable.vue'
 
 export default {
   name: 'ReservationsView',
+  components: { ReservationForm, ReservationTable },
 
   data() {
     return {
-      trainings: trainingsData.trainings,
-      selectedTraining: null,
-      selectedTime: '',
-      store: null
+      trainings: trainingsData.trainings
     }
   },
 
   computed: {
     reservations() {
-      return this.store.reservations
+      return useReservationStore().reservations
     }
   },
 
   created() {
-    // Підключаємо store Pinia
-    this.store = useReservationStore()
-    this.store.loadReservations()
-
-    // Встановлюємо перше тренування за замовчуванням або з query
-    const id = Number(this.$route.query.trainingId)
-    this.selectedTraining =
-      this.trainings.find(t => t.id === id) || this.trainings[0]
-
-    this.selectedTime = this.selectedTraining.timeSlots[0]
+    useReservationStore().loadReservations()
   },
 
   methods: {
-    reserve() {
-      this.store.addReservation({
-        trainingName: this.selectedTraining.title,
-        time: this.selectedTime
-      })
+    addNewReservation(reservation) {
+      useReservationStore().addReservation(reservation)
+      alert('Rezervácia vytvorená!')
     },
-    deleteReservation(index) {
-      this.store.removeReservation(index)
+    deleteReservation(id) {
+      if (confirm('Naozaj chceš zrušiť túto rezerváciu?')) {
+        const store = useReservationStore()
+        const index = store.reservations.findIndex(r => r.id === id)
+        if (index !== -1) store.removeReservation(index)
+      }
     }
   }
 }
 </script>
 
 <style>
-.card {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
+h1 { color: #000; }
+.card { border: 1px solid #ddd; border-radius: 8px; }
+.badge { font-size: 1rem; padding: 5px 10px; }
 </style>
