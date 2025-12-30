@@ -1,34 +1,14 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar">
     <div class="container">
-      <router-link class="navbar-brand" to="/">
-        GymReserve
-      </router-link>
-
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <router-link class="nav-link" to="/">Home</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/trainings">Trainings</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/reservations">Reservations</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/profile">Profile</router-link>
-          </li>
-        </ul>
+      <div class="logo">💪GymReserve</div>
+      
+      <div class="nav-links">
+        <router-link to="/" class="nav-link" exact>Home</router-link>
+        <router-link to="/trainings" class="nav-link">Trainings</router-link>
+        <router-link to="/reservations" class="nav-link">Reservations</router-link>
+        <router-link to="/profile" class="nav-link">Profile</router-link>
+        <router-link to="/reservations" class="btn-book">Book Now</router-link>
       </div>
     </div>
   </nav>
@@ -41,8 +21,51 @@ export default {
 </script>
 
 <style>
-.nav-link.router-link-active {
-  font-weight: bold;
-  text-decoration: underline;
+.logo {
+  font-size: 24px;
+  font-weight: 500;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link {
+  font-size: 16px;
+  padding: 6px 14px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.2s;
+  font-weight: 400;
+}
+
+.nav-link:hover {
+  background: rgba(102, 126, 234, 0.2);
+  color: white;
+}
+
+.router-link-active {
+  color: white;
+  background: rgba(102, 126, 234, 0.3);
+}
+
+.btn-book {
+  padding: 8px 16px;
+  background: #667eea;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  margin-left: 8px;
+  transition: 0.2s;
+  font-size: 16px;
+}
+
+.btn-book:hover {
+  background: #5568d3;
 }
 </style>
