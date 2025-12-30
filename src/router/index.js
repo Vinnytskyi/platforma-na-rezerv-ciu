@@ -13,8 +13,9 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/platforma-na-rezerv-ciu/'),
   routes
 })
 
 export default router
+
