@@ -30,17 +30,14 @@ export default {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 18px;
 }
 
 .nav-link {
   font-size: 16px;
-  padding: 6px 14px;
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   border-radius: 6px;
-  transition: 0.2s;
-  font-weight: 400;
 }
 
 .nav-link:hover {
@@ -59,7 +56,6 @@ export default {
   color: white;
   text-decoration: none;
   border-radius: 6px;
-  font-weight: 500;
   margin-left: 8px;
   transition: 0.2s;
   font-size: 16px;
