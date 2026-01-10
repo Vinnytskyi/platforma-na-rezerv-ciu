@@ -114,11 +114,6 @@ export default {
       type: 'Relax',
       level: 'Beginner',
       duration: 60,
-      coach: {
-        name: 'Anna Smith',
-        specialization: 'Yoga & Stretching',
-        experience: '5 years'
-      },
       timeSlots: ['08:00 - 09:00', '10:00 - 11:00'],
       image: yogaImg,
       isFavorite: false
@@ -131,11 +126,6 @@ export default {
       type: 'Strength',
       level: 'Intermediate',
       duration: 60,
-      coach: {
-        name: 'Laura Brown',
-        specialization: 'Pilates & Core',
-        experience: '6 years'
-      },
       timeSlots: ['09:30 - 10:30', '11:30 - 12:30'],
       image: pilatesImg,
       isFavorite: true
@@ -148,11 +138,6 @@ export default {
       type: 'Cardio',
       level: 'Advanced',
       duration: 45,
-      coach: {
-        name: 'Mark Johnson',
-        specialization: 'HIIT & Cardio',
-        experience: '7 years'
-      },
       timeSlots: ['11:00 - 11:45', '12:00 - 12:45'],
       image: hiitImg,
       isFavorite: true
@@ -165,11 +150,6 @@ export default {
       type: 'Combat',
       level: 'Intermediate',
       duration: 55,
-      coach: {
-        name: 'Tom Williams',
-        specialization: 'Boxing & Conditioning',
-        experience: '8 years'
-      },
       timeSlots: ['12:00 - 12:55', '13:00 - 13:55'],
       image: boxingImg,
       isFavorite: false
@@ -182,11 +162,6 @@ export default {
       type: 'Cardio',
       level: 'Intermediate',
       duration: 50,
-      coach: {
-        name: 'Chris Martinez',
-        specialization: 'Cycling & Endurance',
-        experience: '4 years'
-      },
       timeSlots: ['07:00 - 07:50', '17:00 - 17:50', '19:00 - 19:50'],
       image: spinningImg,
       isFavorite: false
@@ -199,11 +174,6 @@ export default {
       type: 'Dance',
       level: 'Beginner',
       duration: 60,
-      coach: {
-        name: 'Sofia Rodriguez',
-        specialization: 'Dance & Cardio',
-        experience: '5 years'
-      },
       timeSlots: ['18:00 - 19:00', '19:30 - 20:30'],
       image: zumbaImg,
       isFavorite: false
