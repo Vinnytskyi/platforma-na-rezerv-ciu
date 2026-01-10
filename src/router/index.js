@@ -15,7 +15,7 @@ const routes = [
 const router = createRouter({
   history: createWebHistory('/platforma-na-rezerv-ciu/'),
   routes,
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior() {
   return {top: 0}
 }
 })
