@@ -62,9 +62,9 @@ export default {
       return count
     },
 
-    // Rezervácia tréningu
-    bookTraining(id) {
-      this.$router.push('/reservations?trainingId=' + id)
+
+    bookTraining() {
+      this.$router.push('/reservations')
     },
 
     // Prepnutie obľúbeného

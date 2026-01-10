@@ -86,9 +86,6 @@
         <div class="row g-4">
           <div class="col-md-4" v-for="testimonial in testimonials" :key="testimonial.name">
             <div class="testimonial-card h-100">
-              <div class="stars mb-3">
-                <i class="bi bi-star-fill text-warning" v-for="n in 5" :key="n"></i>
-              </div>
               <p class="testimonial-text">{{ testimonial.text }}</p>
               <div class="testimonial-author mt-4">
                 <div class="author-avatar">{{ testimonial.avatar }}</div>

@@ -14,7 +14,10 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory('/platforma-na-rezerv-ciu/'),
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+  return {top: 0}
+}
 })
 
 export default router
