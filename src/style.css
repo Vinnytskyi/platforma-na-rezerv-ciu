@@ -1,11 +1,11 @@
-/* RESET */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY */
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f0f4f8;
@@ -14,13 +14,12 @@ body {
   padding-top: 80px;
 }
 
-/* APP */
 #app {
   width: 100%;
   overflow-x: hidden;
 }
 
-/* OVERRIDE BOOTSTRAP NAVBAR */
+
 nav.navbar {
   position: fixed;
   top: 0;
@@ -39,19 +38,19 @@ nav.navbar .container {
   align-items: center;
 }
 
-/* FIX NAVIGATION TEXT COLOR - ALWAYS WHITE */
+
 nav.navbar .nav-link {
   color: white;
 }
 
-/* HIGHLIGHT ACTIVE PAGE */
+
 nav.navbar .router-link-active {
   color: white;
   background: rgba(102, 126, 234, 0.5);
   font-weight: 500;
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 768px) {
   .d-flex.flex-wrap {
     flex-direction: column;
