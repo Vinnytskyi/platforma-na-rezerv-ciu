@@ -1,0 +1,59 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+  color: #000;
+  overflow-x: hidden;
+  padding-top: 80px;
+}
+
+#app {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+nav.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #1a1a2e;
+  padding: 12px 0;
+  box-shadow: 0 2px 8px rgba(34, 124, 149, 0.3);
+}
+
+nav.navbar .container {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+nav.navbar .nav-link {
+  color: white;
+}
+
+
+nav.navbar .router-link-active {
+  color: white;
+  background: rgba(102, 126, 234, 0.5);
+  font-weight: 500;
+}
+
+
+@media (max-width: 768px) {
+  .d-flex.flex-wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+}
